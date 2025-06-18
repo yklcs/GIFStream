@@ -11,7 +11,7 @@ Immersive video offers a 6-Dof-free viewing experience, potentially playing a ke
 ### Repo. & Environment
 ```bash
 # Clone the repo.
-git clone https://github.com/Hliii/GIFStream.git --recursive
+git clone https://github.com/XDimLab/GIFStream.git --recursive
 cd GIFStream
 
 # Make a conda environment
