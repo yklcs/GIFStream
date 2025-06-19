@@ -463,6 +463,7 @@ class Runner:
             factor=cfg.data_factor,
             normalize=cfg.normalize_world_space,
             test_every=cfg.test_every,
+            first_frame=cfg.start_frame,
         )
         self.trainset = Dataset(
             self.parser,
