@@ -41,7 +41,7 @@ do
             # Calculate the starting frame for this GOP
             GOP_START_FRAME=$((FIRST_FRAME + GOP_ID * GOP ))
             # Calculate the maximum number of frames for this GOP
-            MAX_GOP=$((TOTAL_FRAME - GOP_START_FRAME))
+            MAX_GOP=$((TOTAL_FRAME + FIRST_FRAME - GOP_START_FRAME))
             if ((GOP_ID == 0)); then
                 # If this is the first GOP, train from scratch
                 CUDA_VISIBLE_DEVICES=0 python examples/simple_trainer_GIFStream.py $TYPE --disable_viewer --data_factor $DATA_FACTOR \
