@@ -2,6 +2,18 @@
 [![Website](https://img.shields.io/badge/website-GIFStream-orange)](https://xdimlab.github.io/GIFStream/) [![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2505.07539)
 > Hao Li, Sicheng Li, Xiang Gao, Abudouaihati Batuer, Lu Yu, Yiyi Liao <br>
 
+## Fork Notes
+
+Better environment management with uv and Nix:
+
+```shell
+$ nix develop
+$ cmake -B build -S third_party/MLEntropy/cpp
+$ cmake --build build
+$ uv sync
+$ uv sync --group with-torch
+```
+
 ## Abstract
 **Overview:** *we introduce GIFStream, a novel 4D Gaussian representation enabling high quality representation and efficient compression*
 
