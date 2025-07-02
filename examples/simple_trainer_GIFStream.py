@@ -1395,7 +1395,7 @@ class Runner:
         elif cfg.render_traj_path == "ellipse":
             height = camtoworlds_all[:, 2, 3].mean()
             camtoworlds_all = generate_ellipse_path_z(
-                camtoworlds_all, height=height
+                camtoworlds_all, height=height, n_frames=self.cfg.GOP_size
             )  # [N, 3, 4]
         elif cfg.render_traj_path == "spiral":
             camtoworlds_all = generate_spiral_path(
@@ -1403,6 +1403,8 @@ class Runner:
                 bounds=self.parser.bounds * self.scene_scale,
                 spiral_scale_r=self.parser.extconf["spiral_radius_scale"],
             )
+        elif cfg.render_traj_path == "static":
+            camtoworlds_all = camtoworlds_all[0:1, :3, :].repeat(self.cfg.GOP_size, 0)
         else:
             raise ValueError(
                 f"Render trajectory type not supported: {cfg.render_traj_path}"
